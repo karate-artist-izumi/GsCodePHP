@@ -1,0 +1,29 @@
+
+.name {
+    width: 130px;
+    text-align: center;
+}
+
+.sex {
+    width: 100px;
+    text-align: center;
+}
+
+.tel {
+    width: 60px;
+    text-align: center;
+}
+
+.email {
+    width: 200px;
+    text-align: center;
+}
+
+.moji {
+    color: blue;
+    text-align: center;
+}
+
+.okikae {
+    color:red;
+}
