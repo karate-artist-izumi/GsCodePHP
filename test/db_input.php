@@ -20,7 +20,7 @@ $stmt->bindValue(':naiyou', $naiyou, PDO::PARAM_STR);
 // 4.実際にSQLを実行する。
 $stmt->execute();
 
-header("Location: db_index.php") ;
+header("Location: db_index.php");
 exit();
 
 
