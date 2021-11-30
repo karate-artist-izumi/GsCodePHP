@@ -39,6 +39,16 @@ while($res = $stmt->fetch(PDO::FETCH_ASSOC)){
         $view .= '<td>';
         $view .= h($res["text"]);
         $view .= '</td>';
+
+        $view .= '<td>';
+        $view .= '<a href="change.php?id='.$res[id].'">';
+        $view .= '<button>変更</button>';
+        $view .= '</a>';
+        $view .= '</td>';
+
+        $view .= '<td>';
+        $view .= '<button>削除</button>';
+        $view .= '</td>';
     $view .= '</tr>';
 }
 
@@ -63,6 +73,8 @@ while($res = $stmt->fetch(PDO::FETCH_ASSOC)){
         <th>名前</th>
         <th>EMAIL</th>
         <th>内容</th>
+        <th>変更</th>
+        <th>削除</th>
     </tr>
     
     <?=$view?>
