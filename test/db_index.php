@@ -14,6 +14,6 @@
         <input type="submit" value="送信">
     </form>
     
-    <a href="http://localhost/lab10/test/db_output.php">一覧表示</a>
+    <a href="http://localhost/GsCodePHP/test/db_output.php">一覧表示</a>
 </body>
 </html>

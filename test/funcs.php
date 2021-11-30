@@ -5,8 +5,7 @@ function h($val){
 
 function db_conn(){
     try{
-        // $pdo = new PDO('mysql:charset=UTF8;dbname=***;host=**', '**', '**');
-        $pdo = new PDO('mysql:charset=UTF8;dbname=test_db;host=localhost', 'root', 'root');
+        $pdo = new PDO('mysql:dbname=test_db;charset=UTF8;host=localhost', 'root', 'root');
         return $pdo;
         }catch(PDOException $e){
             print("DB接続に失敗".$e->getMessage());
