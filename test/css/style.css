@@ -28,11 +28,33 @@
     color:red;
 }
 
-.obi{
+.obi_id {
+    width: 30px;
+    text-align: center;
+    background-color: aquamarine;
+}
+
+.obi_name {
+    width: 130px;
+    text-align: center;
+    background-color: aquamarine;
+}
+
+.obi_email {
+    width: 200px;
+    text-align: center;
+    background-color: aquamarine;
+}
+
+.obi_naiyou {
+    width: 400px;
+    text-align: center;
     background-color: aquamarine;
 }
 
 .koumoku{
     color: blue;
     text-align: center;
+    font-weight: bold;
+    font-family: 游明朝,"Yu Mincho",YuMincho,"Hiragino Mincho ProN","Hiragino Mincho Pro",HGS明朝E,メイリオ,Meiryo,serif;
 }

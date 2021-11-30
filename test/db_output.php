@@ -51,10 +51,10 @@ while($res = $stmt->fetch(PDO::FETCH_ASSOC)){
 
     <table border="1">
     <tr>
-        <th class="obi">id</th>
-        <th class="obi">名前</th>
-        <th class="obi">EMAIL</th>
-        <th class="obi">内容</th>
+        <th class="obi_id">id</th>
+        <th class="obi_name">名前</th>
+        <th class="obi_email">EMAIL</th>
+        <th class="obi_naiyou">内容</th>
     </tr>
 
     <?=$view?>
