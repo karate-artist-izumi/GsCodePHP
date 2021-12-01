@@ -36,19 +36,17 @@ $view = $stmt->fetch(PDO::FETCH_ASSOC)
 </head>
 <body>
 変更画面
-<form method="post" action="update.php">
-
-    <!-- value属性で値を挿入 -->
-    名前　：<input type="text" name="name" value="<?=$view['name']?>"><br>
-    EMAIL：<input type="text" name="email" value="<?=$view['email']?>"><br>
-    内容　：<textarea name="text" cols="30" rows="10"><?=$view['text']?></textarea>
-    
-    <!-- 今回はidもupdateに送るために隠した状態で値を持つ -->
-    <input type="hidden" name="id" value="<?=$id?>">
-
-    <br>
-    <input type="submit" value="SEND">
-</form>
+    <form method="post" action="update.php">
+        <!-- value属性で値を挿入 -->
+        名前　：<input type="text" name="name" value="<?=$view['name']?>"><br>
+        EMAIL：<input type="text" name="email" value="<?=$view['email']?>"><br>
+        <!-- テキストエリアだけは値を直接入力 -->
+        内容　：<textarea name="text" cols="30" rows="10"><?=$view['text']?></textarea>
+        <!-- 今回はidもupdateに送るために隠した状態で値を持つ -->
+        <input type="hidden" name="id" value="<?=$id?>">
+        <br>
+        <input type="submit" value="SEND">
+    </form>
     
 </body>
 </html>

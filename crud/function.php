@@ -8,6 +8,7 @@ function h($val){
 //データベース接続設定
 function db_conn(){
     try{
+        // $pdo = new PDO('mysql:dbname=**;charset=UTF8;host=**','**','**');
         $pdo = new PDO('mysql:dbname=test_crud;charset=UTF8;host=localhost','root','root');
         return $pdo;
     }catch(PDOException $e){
