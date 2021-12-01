@@ -13,7 +13,7 @@ $id = $_POST["id"];
 $pdo = db_conn();
 
 //SQL文実行
-$sql = 'UPDATE test_crud_table SET name=:name, email=:email, text=:text WHERE id=:id';
+$sql = 'UPDATE test_crud_table SET name=:name, email=:email, text=:text, datetime=sysdate() WHERE id=:id';
 $stmt = $pdo->prepare($sql);
 
 //安全な値に変換

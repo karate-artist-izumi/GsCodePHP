@@ -45,7 +45,7 @@ $view = $stmt->fetch(PDO::FETCH_ASSOC)
         <!-- 今回はidもupdateに送るために隠した状態で値を持つ -->
         <input type="hidden" name="id" value="<?=$id?>">
         <br>
-        <input type="submit" value="SEND">
+        <input type="submit" value="UPDATE">
     </form>
     
     <br>

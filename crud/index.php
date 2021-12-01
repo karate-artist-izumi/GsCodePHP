@@ -13,7 +13,7 @@
         EMAIL：<input type="text" name="email"><br>
         内容　：<textarea name="text" cols="30" rows="10"></textarea>
         <br>
-        <input type="submit" value="SEND">
+        <input type="submit" value="送信">
     </form>
 
     <br>
