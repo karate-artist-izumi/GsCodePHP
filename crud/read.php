@@ -24,30 +24,33 @@ while($res = $stmt->fetch(PDO::FETCH_ASSOC)){
     //$viewに$resの値を入れる
     $view .= '<tr>';
         $view .= '<td>';
-        //安全な値に変換してから表示
+        //h関数で安全な値に変換してから表示
         $view .= h($res["id"]);
         $view .= '</td>';
 
         $view .= '<td>';
-        $view .= h($res["name"]);
-        $view .= '</td>';
-
-        $view .= '<td>';
-        $view .= h($res["email"]);
-        $view .= '</td>';
-
-        $view .= '<td>';
-        $view .= h($res["text"]);
-        $view .= '</td>';
-
-        $view .= '<td>';
+        //idをgetでURLに添付
         $view .= '<a href="change.php?id='.$res[id].'">';
-        $view .= '<button>変更</button>';
+        $view .= h($res["name"]);
         $view .= '</a>';
         $view .= '</td>';
 
         $view .= '<td>';
+        $view .= '<a href="change.php?id='.$res[id].'">';
+        $view .= h($res["email"]);
+        $view .= '</a>';
+        $view .= '</td>';
+
+        $view .= '<td>';
+        $view .= '<a href="change.php?id='.$res[id].'">';
+        $view .= h($res["text"]);
+        $view .= '</a>';
+        $view .= '</td>';
+
+        $view .= '<td>';
+        $view .= '<a href="delete.php?id='.$res[id].'">';
         $view .= '<button>削除</button>';
+        $view .= '</a>';
         $view .= '</td>';
     $view .= '</tr>';
 }
@@ -73,7 +76,6 @@ while($res = $stmt->fetch(PDO::FETCH_ASSOC)){
         <th>名前</th>
         <th>EMAIL</th>
         <th>内容</th>
-        <th>変更</th>
         <th>削除</th>
     </tr>
     

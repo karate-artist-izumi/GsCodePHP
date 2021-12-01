@@ -48,5 +48,8 @@ $view = $stmt->fetch(PDO::FETCH_ASSOC)
         <input type="submit" value="SEND">
     </form>
     
+    <br>
+    <a href="http://localhost/GsCodePHP/crud/read.php">一覧表示</a>
+
 </body>
 </html>
