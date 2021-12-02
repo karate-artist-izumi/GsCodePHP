@@ -8,8 +8,12 @@ function h($val){
 //データベース接続設定
 function db_conn(){
     try{
-        // $pdo = new PDO('mysql:dbname=**;charset=UTF8;host=**','**','**');
-        $pdo = new PDO('mysql:dbname=test_crud;charset=UTF8;host=localhost','root','root');
+        $db_name = 'test_crud';
+        $host = 'localhost';
+        $host_id = 'root';
+        $host_pass = 'root';
+        $pdo = new PDO('mysql:dbname='.$db_name.';charset=UTF8;host='.$host.'',''.$host_id.'',''.$host_pass.'');
+        // $pdo = new PDO('mysql:dbname=test_crud;charset=UTF8;host=localhost','root','root');
         return $pdo;
     }catch(PDOException $e){
         print("DB接続失敗".$e->getMessage());
