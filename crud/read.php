@@ -48,6 +48,7 @@ while($res = $stmt->fetch(PDO::FETCH_ASSOC)){
         $view .= '</td>';
 
         $view .= '<td>';
+        //削除リンク
         $view .= '<a href="delete.php?id='.$res["id"].'">';
         $view .= '<button>削除</button>';
         $view .= '</a>';

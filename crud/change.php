@@ -16,6 +16,7 @@ $stmt->bindValue(":id",$id,PDO::PARAM_INT);
 //$stmtを実行する
 $stmt->execute();
 
+//viewの表示場所を用意
 $view = "";
 
 //データループ表示
