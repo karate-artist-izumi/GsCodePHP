@@ -30,25 +30,25 @@ while($res = $stmt->fetch(PDO::FETCH_ASSOC)){
 
         $view .= '<td>';
         //idをgetでURLに添付
-        $view .= '<a href="change.php?id='.$res[id].'">';
+        $view .= '<a href="change.php?id='.$res["id"].'">';
         $view .= h($res["name"]);
         $view .= '</a>';
         $view .= '</td>';
 
         $view .= '<td>';
-        $view .= '<a href="change.php?id='.$res[id].'">';
+        $view .= '<a href="change.php?id='.$res["id"].'">';
         $view .= h($res["email"]);
         $view .= '</a>';
         $view .= '</td>';
 
         $view .= '<td>';
-        $view .= '<a href="change.php?id='.$res[id].'">';
+        $view .= '<a href="change.php?id='.$res["id"].'">';
         $view .= h($res["text"]);
         $view .= '</a>';
         $view .= '</td>';
 
         $view .= '<td>';
-        $view .= '<a href="delete.php?id='.$res[id].'">';
+        $view .= '<a href="delete.php?id='.$res["id"].'">';
         $view .= '<button>削除</button>';
         $view .= '</a>';
         $view .= '</td>';
