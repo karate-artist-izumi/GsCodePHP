@@ -20,9 +20,30 @@ function db_conn(){
     }
 }
 
+//エラーだった時の処理
+function sql_error($stmt){
+    //execute（SQL実行時にエラーがある場合）
+    $error = $stmt->errorInfo();
+    exit("SQLError:".$error[2]);
+}
+
 //リダイレクト
 function jump($link){
+    //linkにジャンプ
     return header("Location: ".$link);
+}
+
+//ログインチェック
+function sschk(){
+//ssidに変数がセットされていない
+//or(又は)前のページでログインしたIDとセッションIDが同じじゃない時
+if(!isset($_SESSION["ssid"]) || $_SESSION["ssid"] != session_id()){
+    exit("ログインエラー");
+}else{
+//セッションIDをページ遷移した時に再度作ってssidに挿入
+    session_regenerate_id(true);
+    $_SESSION["ssid"] = session_id();
+}
 }
 
 ?>
