@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+
+//送信データをparam変数にセット
+const params = new URLSearchParams();
+params.append('id', 'value1'); //params.append("パラメータ名", "値");
+params.append('mode', 'value2'); //params.append("パラメータ名", "値");
+params.append('type', 'value3'); //params.append("パラメータ名", "値");
+//Ajax（ 非同期通信 ）
+
+axios.post('ajax.php'
+    , params).then(function (response) {
+      console.log( response.data ); //通信OK
+    }).catch(function (error) {
+      console.log(error); //通信Error
+    }).then(function () {
+      console.log("Last"); //通信OK/Error後に処理を必ずさせたい場合
+    });
+
+    
+    
+    </script>
+</body>
+</html>
