@@ -11,12 +11,15 @@ include("function.php");
 $pdo = db_conn();
 
 //userテーブルを検索するSQL文
-$sql = "SELECT * FROM test_user_table WHERE login_id=:login_id AND login_pass=:login_pass AND life_flg=0";
+// $sql = "SELECT * FROM test_user_table WHERE login_id=:login_id AND login_pass=:login_pass AND life_flg=0";
+//パスワードハッシュ化した時はID検索のみ
+$sql = "SELECT * FROM test_user_table WHERE login_id=:login_id AND life_flg=0";
 //stmtにSQL文の結果を準備
 $stmt = $pdo->prepare($sql);
 //安全な値に変更
 $stmt->bindValue(':login_id',$login_id,PDO::PARAM_STR);
-$stmt->bindValue(':login_pass',$login_pass,PDO::PARAM_STR);
+//パスワードハッシュ化した時はpass検索は不要
+// $stmt->bindValue(':login_pass',$login_pass,PDO::PARAM_STR);
 //実行してstatusに結果を挿入
 $status = $stmt->execute();
 
@@ -31,7 +34,12 @@ if($status==false){
 $val = $stmt->fetch();
 
 //もしもvalのidにデータが空で無ければ
-if($val["id"] != ""){
+// if($val["id"] != ""){
+//パスワードハッシュ化した時はpassword_verifyで真偽の判定
+$pass_status = password_verify($login_pass, $val["login_pass"]);
+//trueならifが実行される
+if($pass_status == true){
+
     //sessionIDをセッションでssidに渡す
     $_SESSION["ssid"] = session_id();
     //valの値をセッションで渡す

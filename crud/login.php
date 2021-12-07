@@ -13,6 +13,9 @@
         pass: <input type="password" name="login_pass"><br>
         <input type="submit" value="Login">
     </form>
+
+    <a href="user_index.php">ユーザー登録</a>
+
     
 </body>
 </html>
