@@ -13,6 +13,7 @@
   <nav class="navbar navbar-default">
     <div class="container-fluid">
     <div class="navbar-header"><a class="navbar-brand" href="select.php">データ一覧</a></div>
+    <div class="navbar-header"><a class="navbar-brand" href="login.php">ログイン</a></div>
     </div>
   </nav>
 </header>

@@ -21,6 +21,9 @@ if ($status == false) {
     //FETCH_ASSOC=http://php.net/manual/ja/pdostatement.fetch.php
     while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $view .= '<P>';
+        //ファイル表示
+        $view .= '<img src="updir/'.$result["img"].'" width="100">';
+        
         $view .= '<a href="user_detail.php?id='.$result["id"].'">';
         $view .= $result["name"] . "," . $result["lid"];
         $view .= '</a>';
@@ -57,7 +60,8 @@ if ($status == false) {
 <!-- Main[Start] -->
 <div>
     <h1>ユーザー一覧</h1>
-    <div class="container jumbotron"><?php echo $view; ?></div>
+    <div><?php echo $view; ?></div>
+    <!-- <div class="container jumbotron"><?php echo $view; ?></div> -->
 </div>
 <!-- Main[End] -->
 
