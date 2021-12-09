@@ -26,7 +26,15 @@ $stmt->bindValue(':text',$text,PDO::PARAM_STR);
 $stmt->bindValue(':id',$id,PDO::PARAM_INT);
 
 //sqlを実行
-$stmt->execute();
+//実行してstatusに結果を挿入
+$status = $stmt->execute();
+
+//statusがエラーだったらここで処理を止める
+if($status==false){
+    //errorにstmtのエラー情報を挿入
+    $error = $stmt->errorInfo();
+    exit("SQLエラー".$error[2]);
+}
 
 //入力画面に戻す
 // header("Location: index.php");

@@ -14,7 +14,7 @@ $status = $stmt->execute();
 
 //3. SQL実行時にエラーがある場合STOP
 if($status==false){
-    sql_error();
+    sql_error("SQLエラー");
 }
 
 //4. 抽出データ数を取得
