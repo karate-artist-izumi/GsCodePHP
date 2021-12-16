@@ -1,0 +1,14 @@
+今回はCRUD(クラッド)を意識してネーミングしてあります。
+CRUDはCreate・Read・Upudate・Deleteの略です。
+
+私が分かりやすく作ってありますので、山崎先生のコードと読み替える場所があります
+select.php → read.php
+insert.php → create.php
+detail.php → change.php
+funcs.php → function.php
+
+またパスワードハッシュ化、データ表示のXSS、エラー表示も実装してあります。
+
+htmlが有るところにはcss・jsのリンクも貼ってありますので
+装飾したいところにid・class名を付けてstyle.css・main.jsを編集すれば
+装飾が出来ると思います。
