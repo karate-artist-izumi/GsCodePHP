@@ -20,9 +20,33 @@
         </ul>
     </div>
     <!-- ここから -->
+    <?php 
+    
+    //日付関数
+    //Y,Hは大文字
+    $date = date('Y/m/d H:i');
+    echo $date;
+    echo '<br>';
 
+    $str = 'abcde';
+    $len = strlen($str);
+    echo $str.'の文字数は'.$len;
+    echo '<br>';
 
+    $rand = rand(1,3);
+    echo $rand;
+    echo '<br>';
 
+    if($rand === 1){
+        echo '大吉';
+    } elseif($rand === 2){
+        echo '吉';
+    } else {
+        echo 'きょう';
+
+    }
+
+    ?>
     <!-- ここまで -->
 </body>
 

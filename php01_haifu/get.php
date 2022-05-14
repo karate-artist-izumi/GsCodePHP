@@ -21,9 +21,15 @@
     </div>
 
     <!-- サンプル↓ -->
-    <form action="送り先" method="方法">
+    <!-- <form action="送り先" method="方法">
         お名前: <input type="text" name="送るときの名前">
         EMAIL: <input type="text" name="送るときの名前">
+        <input type="submit" value="送信">
+    </form> -->
+
+    <form action="get_confirm.php" method="get">
+        お名前: <input type="text" name="namae">
+        EMAIL: <input type="text" name="email">
         <input type="submit" value="送信">
     </form>
 

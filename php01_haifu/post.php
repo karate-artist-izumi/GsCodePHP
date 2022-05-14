@@ -21,9 +21,9 @@
     </div>
     <P>※post_confirm.phpにpostで送ってください。</P>
 
-    <form action="" method="">
-        お名前: <input type="text" name="">
-        EMAIL: <input type="text" name="">
+    <form action="post_confirm.php" method="post">
+        お名前: <input type="text" name="namae">
+        EMAIL: <input type="text" name="email">
         <!-- パスワード欄を追加してみる。 -->
         <input type="submit" value="送信">
     </form>

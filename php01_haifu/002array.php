@@ -20,8 +20,20 @@
         </ul>
     </div>
     <!-- ↓ここから -->
+<?php 
+
+    $array = ['東京','大阪','名古屋'];
+
+    var_dump($array);
+    echo '<br>';
+    var_dump($array[2]);
+    echo '<br>';
 
 
+    $array[] = '福岡';//配列の追加方法
+    var_dump($array);
+
+?>
     <!-- ↑ここまで -->
 </body>
 

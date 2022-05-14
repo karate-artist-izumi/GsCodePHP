@@ -7,6 +7,9 @@
             background-color: #2FA6E9;
         }
 
+        .red{
+            background-color: red;
+        }
     </style>
 </head>
 
@@ -18,6 +21,19 @@
         </ul>
     </div>
 
+<?php 
+
+echo '<p class="red">css test</p>';
+echo '<p id="test">console.log</p>';
+
+?>
+
+<script>
+    let test = document.getElementById('test');
+    console.log(test);
+    
+
+</script>
 </body>
 
 </html>

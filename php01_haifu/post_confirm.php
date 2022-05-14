@@ -1,6 +1,12 @@
+<?php 
 // POSTを受け取る
 // POSTの場合はパスワードも送ってみる。
 
+$namae = $_POST['namae'];
+$email = $_POST['email'];
+
+
+?>
 <html>
 
 <head>
@@ -9,7 +15,7 @@
 </head>
 
 <body>
-    お名前：
+    お名前：<?= $namae?>
     EMAIL：
     パスワード：
     <ul>

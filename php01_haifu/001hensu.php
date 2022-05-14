@@ -23,10 +23,18 @@
         </ul>
     </div>
     <!-- ↓ここから -->
+<?php
 
+    $myouji = 'izumi';
+    $name = 'satoru';
 
+    echo $name . 'です';
+    echo '<br>';
+    echo '苗字は' . $myouji;
 
+    echo '<h1>'.$name.'</h1>';
 
+?>
     <!-- ↑ここまで -->
 </body>
 
