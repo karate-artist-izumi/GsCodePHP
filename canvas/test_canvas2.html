@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="cv1" width="360" height="240"></canvas>
+<script>
+var cvs = document.getElementById("cv1");
+var ctx = cvs.getContext("2d");
+
+//canvasにランダムなカラーラインを描く関数
+function chgCol()
+{
+  for ( var i = 0 ; i < 9 ; i++ )
+  {
+    var r = Math.floor(Math.random()*256);
+    var g = Math.floor(Math.random()*256);
+    var b = Math.floor(Math.random()*256);
+
+    ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+    ctx.fillRect( 40*i, 0, 40, 240 );
+  }
+}
+
+//canvasデータを画像に変換にする関数
+function chgImg()
+{
+  var png = cvs.toDataURL();
+  document.getElementById("newImg").src = png;
+}
+</script>
+
+<form>
+<input type="button" value="色変更" onclick="chgCol()">
+<input type="button" value="画像に変換" onclick="chgImg()">
+</form>
+
+<div><img id="newImg"></div>
+    
+</body>
+</html>
