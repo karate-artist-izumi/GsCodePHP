@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>storage</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+      }
+      .disN {
+        display: none;
+      }
+      .disB {
+        display: block;
+      }
+      img {
+        height: 300px;
+        width: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div><input type="file" name="" id="fileButton" /></div>
+      <div>
+        <button id="up">アップロード</button>
+        <button id="down" class="disN">ダウンロード</button>
+      </div>
+      <div>
+        <p>
+          ダウンロードボタンをクリックした後、<br />数秒後に画像が表示されます。
+        </p>
+        <img id="image" src="" alt="ダウンロード画像です" />
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+    <script src="./ignore/canvas_ig.js"></script>
+
+    <script>
+      var firebaseConfig = {
+        apiKey: ig_apiKey,
+        authDomain: ig_authDomain,
+        databaseURL: ig_databaseURL,
+        projectId: ig_projectId,
+        storageBucket: ig_storageBucket,
+        messagingSenderId: ig_messagingSenderId,
+        appId: ig_appId
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-storage.js"></script>
+    <script src="./js/test.js"></script>
+  </body>
+</html>

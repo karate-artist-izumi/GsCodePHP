@@ -163,4 +163,16 @@ $("#save").on("click",function(){
 //     set(post, data);
 // });
 
+// const up = document.getElementById("up");
+// up.addEventListener("click",() => {
+//     const file = document.getElementById("fileButton").file[0];
+// });
 
+// let storageRef = firebase.storage().ref();
+
+// let metadata = {
+//     contentType: "image/",
+// }
+
+// const uploadTask = storageRef.child("image/" + file.name).put(file, metadata);
+// console.log(uploadTask);
