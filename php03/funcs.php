@@ -1,5 +1,9 @@
 <?php
 require_once('./igno/env.php');
+$s_name = "'".$sdb_name."'";
+$s_id = $sdb_id;
+$s_pw = $sdb_pw;
+$s_host = $sdb_host;
 
 //XSS対応（ echoする場所で使用！）
 function h($str)
@@ -19,7 +23,7 @@ function db_conn(){
 
         //localhostでなかればさくらに接続する
         if($_SERVER["HTTP_HOST"] != 'localhost'){
-            $db_name = '**';    //データベース名
+            $db_name = '';    //データベース名
             $db_id   = '**';      //アカウント名
             $db_pw   = '**';      //パスワード：XAMPPはパスワード無しに修正してください。
             $db_host = '**'; //DBホスト

@@ -1,15 +1,13 @@
 <?php 
 echo 'ok';
-echo 'テスト';
+echo '<br>テスト';
 
 $r = rand(1,3);
-if($r === 1){
-    echo 'DAIKICHI';
-}
-if($r === 2){
-    echo 'kichi';
-}
-if($r === 3){
-    echo 'syokichi';
+if($r == 1){
+    echo '<br>DAIKICHI';
+}else if($r == 2){
+    echo '<br>kichi';
+}else{
+    echo '<br>syokichi';
 }
 ?>

@@ -4,8 +4,6 @@ include('funcs.php');
 $name = $_GET['name'];
 $mail = $_GET['mail'];
 
-
-
 ?>
 
 <html lang="ja">
