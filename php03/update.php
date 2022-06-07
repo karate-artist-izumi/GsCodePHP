@@ -47,8 +47,7 @@ $status = $stmt->execute(); //実行
 //４．データ登録処理後
 if ($status === false) {
     //*** function化する！******\
-    $error = $stmt->errorInfo();
-    exit('SQLError:' . print_r($error, true));
+    sql_error($stmt);
 } else {
     //*** function化する！*****************
     redirect('select.php');

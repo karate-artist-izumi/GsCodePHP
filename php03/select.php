@@ -24,10 +24,10 @@ if ($status === false) {
         //GETデータ送信リンク作成
         // <a>で囲う。
         $view .= '<p>';
-        $view .= '<a href="detail.php?id='.$result['id'].'">';
-        $view .= $result['indate'] . '：' . $result['name'].' ';
+        $view .= '<a href="detail.php?id='.h($result['id']).'">';
+        $view .= h($result['indate']) . '：' . h($result['name']).' ';
         $view .= '</a>';
-        $view .= '<a href="delete.php?id='.$result['id'].'">';
+        $view .= '<a href="delete.php?id='.h($result['id']).'">';
         $view .= '<button>削除';
         $view .= '</button>';
         $view .= '</a>';
