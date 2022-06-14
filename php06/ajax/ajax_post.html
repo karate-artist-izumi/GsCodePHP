@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ajax_post.html</title>
+</head>
+
+<body>
+<h1 id="status">Ajax通信中...</h1>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    //Ajax（非同期通信）
+    //送信準備必須
+    const params = new URLSearchParams();
+    //オブジェクト変数用意
+    params.append('id',   'データ1');
+    params.append('mode', 'データ2');
+    params.append('type', 'データ3');
+
+    //axiosでAjax送信
+    axios.post('ajax_post.php',params).then(function (response) {
+        console.log(response.data);//通信OK
+        document.querySelector("#status").innerHTML="ajax_post.php/通信OK";
+    }).catch(function (error) {
+        console.log(error);//通信Error
+    }).then(function () {
+        console.log("Last");//通信OK/Error後に処理を必ずさせたい場合
+    });
+
+</script>
+</body>
+</html>
