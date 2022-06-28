@@ -16,6 +16,16 @@ if(preg_replace("/( |　)/", "", $title)=== '' || preg_replace("/( |　)/", "", 
     //[?hogehoge]で？以降の物をgetで取得できる
 };
 
+//imgがある場合
+if ($_SESSION['post']['image_data']) {
+    // 名前を一意にするため時間を加えている。
+    $img = date('YmdHis') . '_' . $_SESSION['post']['file_name'];
+}
+
+if ($_SESSION['post']['image_data']) {
+    file_put_contents('../images/' . $img, $_SESSION['post']['image_data']);
+}
+
 //2. DB接続します
 $pdo = db_conn();
 

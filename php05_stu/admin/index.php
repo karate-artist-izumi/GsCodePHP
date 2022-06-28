@@ -62,7 +62,16 @@ if ($status == false) {
                 <?php foreach ($contents as $content): ?>
                     <div class="col">
                         <div class="card shadow-sm">
-                            <img src="../images/default_image/no_image_logo.png" alt="" class="bd-placeholder-img card-img-top" >
+
+                            <!-- デフォルトイメージ -->
+                            <!-- <img src="../images/default_image/no_image_logo.png" alt="" class="bd-placeholder-img card-img-top" > -->
+                            <?php if ($content['img']): ?>
+                                <img src="../images/<?=$content['img']?>" alt="" class="bd-placeholder-img card-img-top" >
+                            <?php else: ?>
+                                <img src="../images/default_image/no_image_logo.png" alt="" class="bd-placeholder-img card-img-top" >
+                            <?php endif ?>
+
+
                             <div class="card-body">
                                 <h3><?= $content['title'] ?></h3>
                                 <p class="card-text"><?= nl2br($content['content']) ?></p>

@@ -4,8 +4,15 @@ require_once('../funcs.php');
 loginCheck();
 
 // post受け取る
-$title = $_POST['title'];
-$content = $_POST['content'];
+// $title = $_POST['title'];
+// $content = $_POST['content'];
+
+//sessionに値を残す
+// $_SESSION['post']['title']←に値が入る？
+//postで値を貰った→セッションにも値を入れて→変数に格納する
+$title = $_SESSION['post']['title'] = $_POST['title'];
+$content = $_SESSION['post']['content'] = $_POST['content'];
+
 
 // 簡単なバリデーション処理追加。
 //タイトルとコメントが空白の場合
@@ -17,6 +24,22 @@ if(preg_replace("/( |　)/", "", $title)=== '' || preg_replace("/( |　)/", "", 
 
 
 // imgある場合
+// var_dump($_FILES);
+//imgのなかにnameがあれば名前保存→データ保存→拡張子保存
+if($_FILES['img']['name']){
+    //ファイルのnameをセッションに保存
+    $file_name = $_SESSION['post']['file_name'] = $_FILES['img']['name'];
+    // 一時保存されているファイル内容を取得して、セッションに格納
+    $image_data = $_SESSION['post']['image_data'] = file_get_contents($_FILES['img']['tmp_name']);
+    // 一時保存されているファイルの種類を確認して、セッションにその種類に当てはまる特定のintを格納
+    $image_type = $_SESSION['post']['image_type'] = exif_imagetype($_FILES['img']['tmp_name']);
+
+}else{
+    //データが無い場合は空白を収納
+    $image_data = $_SESSION['post']['image_data'] = '';
+    $image_type = $_SESSION['post']['image_type'] = '';
+    
+}
 
 ?>
 
@@ -68,6 +91,14 @@ if(preg_replace("/( |　)/", "", $title)=== '' || preg_replace("/( |　)/", "", 
             <input type="hidden"name="content" value="<?= $content ?>">
             <div><?= nl2br($content) ?></div>
         </div>
+
+        <!-- 画像の確認 -->
+        <?php if($image_data): ?>
+            <div class="mb-3">
+                <img src="image.php">
+            </div>
+        <?php endif ?>
+
         <button type="submit" class="btn btn-primary">投稿</button>
     </form>
 

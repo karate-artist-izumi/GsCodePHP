@@ -3,6 +3,19 @@ session_start();
 require_once('../funcs.php');
 loginCheck();
 
+$title = '';
+$content = '';
+//もしセッションに値があるなら
+if($_SESSION['post']['title']){
+    $title = $_SESSION['post']['title'];
+}
+
+if($_SESSION['post']['content']){
+    $content = $_SESSION['post']['content'];
+}
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -46,17 +59,25 @@ loginCheck();
     <?php endif; ?>
 
     <!-- 一旦確認画面を表示させる -->
-    <form method="POST" action="confirm.php">
+    <!-- 画像を贈る場合はenctype="multipart/form-data"を付ける -->
+    <form method="POST" action="confirm.php" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="title" class="form-label">タイトル</label>
-            <input type="text" class="form-control" name="title" id="title" aria-describedby="title">
+            <input type="text" class="form-control" name="title" id="title" aria-describedby="title" value="<?= $title ?>">
             <div id="emailHelp" class="form-text">※入力必須</div>
         </div>
         <div class="mb-3">
             <label for="content" class="form-label">記事内容</label>
-            <textArea type="text" class="form-control" name="content" id="content" aria-describedby="content" rows="4" cols="40"></textArea>
+            <textArea type="text" class="form-control" name="content" id="content" aria-describedby="content" rows="4" cols="40"><?= $content ?></textArea>
             <div id="emailHelp" class="form-text">※入力必須</div>
         </div>
+
+        <!-- 画像を投稿 -->
+        <div class="mb-3">
+            <label for="img" class="form-label">画像投稿</label>
+            <input type="file" name="img">
+        </div>
+
 
         <button type="submit" class="btn btn-primary">投稿する</button>
     </form>
