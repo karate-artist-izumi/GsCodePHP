@@ -12,7 +12,7 @@ $status = $stmt->execute();
 //３．データ表示
 $view="";
 if($status==false) {
-  sql_error();
+  sql_error($stmt);
 }else{
   while( $r = $stmt->fetch(PDO::FETCH_ASSOC)){ 
     $view .= '<p>';
