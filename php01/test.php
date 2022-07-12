@@ -15,7 +15,7 @@ echo"<h1>はじめてのPHP</h1>";
 <body>
 
 
-    <?php echo 2022; ?>
+    <?php echo 20220712; ?>
     
 </body>
 </html>
